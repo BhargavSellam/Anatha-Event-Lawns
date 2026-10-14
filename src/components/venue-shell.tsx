@@ -3,10 +3,10 @@ import { Link } from '@tanstack/react-router';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Menu, X, ArrowUpRight, Instagram, MessageCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from '@/assets/anantha-logo.jpg.asset.json';
+const logo = '/assets/anantha-logo.png';
 import { business, instagram } from '@/lib/event-content';
 const navigation = [{to:'/', name:'Home'}, {to:'/about', name:'About'}, {to:'/events', name:'Events & Services'}, {to:'/gallery', name:'Gallery'}, {to:'/contact', name:'Contact'}] as const;
-function Brand() { return <Link to="/" className="brand" aria-label="Anantha Event Lawns home"><img src={logo.url} alt="Original Anantha lotus logo" width={62} height={62}/><div className="min-w-0"><div className="brand-name">Anantha Event Lawns</div><div className="brand-sub">By Jampana</div></div></Link>; }
+function Brand() { return <Link to="/" className="brand" aria-label="Anantha Event Lawns home"><img src={logo} alt="Original Anantha lotus logo" width={62} height={62}/><div className="min-w-0"><div className="brand-name">Anantha Event Lawns</div><div className="brand-sub">By Jampana</div></div></Link>; }
 export function VenueHeader() {
  const [open,setOpen] = useState(false); const [scrolled,setScrolled] = useState(false);
  useEffect(()=>{const scroll=()=>setScrolled(window.scrollY>10);scroll();window.addEventListener('scroll',scroll,{passive:true});return ()=>window.removeEventListener('scroll',scroll);},[]);
